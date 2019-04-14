@@ -1,0 +1,24 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the program file which includes the logic for external	*/
+/* interrupts for ATmega32											*/
+/********************************************************************/
+
+/* Header files included in this source code file					*/
+#include "STD_Types.h"
+#include "EXTI_Interface.h"
+#include "EXTI_Config.h"
+
+/********************************************************************/
+/* Name: EXTI_vInitialize											*/
+/* Description: This is an API used to initialize external interrupt*/
+/* Inputs: void														*/
+/* Outputs: void													*/
+/********************************************************************/
+
+

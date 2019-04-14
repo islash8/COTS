@@ -1,0 +1,18 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the interface file of external interrupt driver for      */
+/* ATmega32. This header file should include available APIs, and    */
+/* available global values											*/
+/********************************************************************/
+
+#ifndef EXTI_INTERFACE_H_
+#define EXTI_INTERFACE_H_
+
+
+
+#endif /* EXTI_INTERFACE_H_ */

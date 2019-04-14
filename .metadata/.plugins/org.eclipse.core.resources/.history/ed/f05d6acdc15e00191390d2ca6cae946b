@@ -1,0 +1,18 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the private file of external interrupt driver for        */
+/* ATmega32. This header file should include private values,        */
+/* private addresses, and registers									*/
+/********************************************************************/
+
+#ifndef EXTI_PRIVATE_H_
+#define EXTI_PRIVATE_H_
+
+
+
+#endif /* EXTI_PRIVATE_H_ */

@@ -1,0 +1,20 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the configuration file for external interrupt driver for */
+/* ATmega32                                                         */
+/********************************************************************/
+
+#ifndef EXTI_PUBLIC_CONFIG_H_
+#ifdef  EXTI_INTERFACE_H_
+#define EXTI_PUBLIC_CONFIG_H_
+
+/* This is the public configuration part which would be included	*/
+/* in the interface.h file											*/
+
+#endif /* EXTI_CONFIG_H_ */
+#endif

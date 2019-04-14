@@ -1,0 +1,675 @@
+19:24:57 **** Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:17,
+                 from ../EXTI_prog.c:15:
+../EXTI_Config.h:31:27: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_RISING_EDGE_TRIGGER'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+    EXTI_u8_RISING_EDGE_TRIGGER
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_FALLING_EDGE_TRIGGER'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+                            EXTI_u8_FALLING_EDGE_TRIGGER
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:25:28 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:17,
+                 from ../EXTI_prog.c:15:
+../EXTI_Config.h:31:27: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_RISING_EDGE_TRIGGER'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+    EXTI_u8_RISING_EDGE_TRIGGER
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_FALLING_EDGE_TRIGGER'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+                            EXTI_u8_FALLING_EDGE_TRIGGER
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:273:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:39:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:275:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:26:34 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:17,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:31:27: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:39:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:26:37 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:17,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:31:27: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:39:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:28:04 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:17,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:31:27: error: 'EXTI_u8_NO_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:36:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:39:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:29:28 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:65,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:36:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_INT_ENABLE'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT_ENABLE
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_INT_ENABLE'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+                            EXTI_u8_INT_ENABLE
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:37:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:34:07 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:62,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:36:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:35:16 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:62,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:36:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_Config.h:37:4: error: 'EXTI_u8_RISING_TRIGGER' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:37:28: error: 'EXTI_u8_FALLING_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_TRIGGER, EXTI_u8_FALLING_TRIGGER, EXTI_u8_FALLING_TRIGGER};
+                            ^~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:35:19 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:62,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:36:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS];
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:36:07 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Private.h:62,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:32:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:32:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:36:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS];
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:37:20 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:17,
+                 from ../EXTI_prog.c:15:
+../EXTI_Config.h:21:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+    EXTI_u8_INT0
+../EXTI_Config.h:21:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function); did you mean 'EXTI_u8_INT0'?
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+                        EXTI_u8_INT0
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_Config.h:26:4: error: 'EXTI_u8_RISING_EDGE_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_EDGE_TRIGGER, EXTI_u8_RISING_EDGE_TRIGGER, EXTI_u8_RISING_EDGE_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:274:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:14:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:276:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:38:01 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:17,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:20:27: error: 'EXTI_u8_NO_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:21:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:21:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:26:4: error: 'EXTI_u8_RISING_EDGE_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_EDGE_TRIGGER, EXTI_u8_RISING_EDGE_TRIGGER, EXTI_u8_RISING_EDGE_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:38:09 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:17,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:20:27: error: 'EXTI_u8_NO_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:21:4: error: 'EXTI_u8_INT_ENABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+    ^~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:21:24: error: 'EXTI_u8_INT_DISABLE' undeclared here (not in a function)
+ = {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                        ^~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:26:4: error: 'EXTI_u8_RISING_EDGE_TRIGGER' undeclared here (not in a function)
+ = {EXTI_u8_RISING_EDGE_TRIGGER, EXTI_u8_RISING_EDGE_TRIGGER, EXTI_u8_RISING_EDGE_TRIGGER};
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:38:20 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:108,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:20:27: error: 'EXTI_u8_NO_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:38:39 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:108,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:20:27: error: 'EXTI_u8_NO_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]= {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:24:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:38:53 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:108,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:20:27: error: 'EXTI_u8_NO_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]
+                           ^~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function)
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:39:12 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:110,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:39:19 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+In file included from ../EXTI_Interface.h:110,
+                 from ../EXTI_prog.c:14:
+../EXTI_Config.h:25:36: error: 'EXTI_u8_NUMBER_OF_INTERRUPTS' undeclared here (not in a function); did you mean 'EXTI_u8_NO_OF_INTERRUPTS'?
+ u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS]
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                    EXTI_u8_NO_OF_INTERRUPTS
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:39:25 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:34:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:39:48 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:30:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:40:55 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+../EXTI_prog.c: In function 'EXTI_SetInterruptTrigger':
+../EXTI_prog.c:275:6: warning: implicit declaration of function 'EXTI_u8_INDEX_INT2'; did you mean 'EXTI_u8_INT2'? [-Wimplicit-function-declaration]
+     {EXTI_u8_INDEX_INT2
+      ^~~~~~~~~~~~~~~~~~
+      EXTI_u8_INT2
+In file included from ../EXTI_prog.c:15:
+../EXTI_Private.h:30:46: error: invalid type argument of '->' (have 'int')
+ #define EXTI_u8_MCUCR    ((Register *) 0x55) -> ByteAccess
+                                              ^~
+../EXTI_prog.c:277:6: note: in expansion of macro 'EXTI_u8_MCUCR'
+      EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+      ^~~~~~~~~~~~~
+make: *** [subdir.mk:26: EXTI_prog.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+19:41:55 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+Finished building: ../EXTI_prog.c
+ 
+Building file: ../Lib_Delay.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Lib_Delay.d" -MT"Lib_Delay.o" -c -o "Lib_Delay.o" "../Lib_Delay.c"
+Finished building: ../Lib_Delay.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:10: fatal error: DIO_Interface.h: No such file or directory
+ #include "DIO_Interface.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [subdir.mk:26: main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.

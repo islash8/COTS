@@ -1,0 +1,91 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the interface file of external interrupt driver for      */
+/* ATmega32. This header file should include available APIs, and    */
+/* available global values											*/
+/********************************************************************/
+
+#ifndef EXTI_INTERFACE_H_
+#define EXTI_INTERFACE_H_
+
+/* Include the config file for any public configurations to be included */
+#include "EXTI_Config.h"
+
+/* External interrupts available indices							*/
+/* In ATmega32, we have 3 external interrupts:						*/
+/* Interrupt 0, Interrupt 1, Interrupt 2							*/
+#define EXTI_u8_INT0	(u8)0
+#define EXTI_u8_INT1	(u8)1
+#define EXTI_u8_INT2   (u8)2
+
+/* External interrupts trigger sensing definitions 					*/
+/* it expects the following values:									*/
+/* - Rising edge													*/
+/* - Falling edge													*/
+/* - Low level														*/
+/* - Any logical change												*/
+#define EXTI_u8_LOW_LEVEL_TRIGGER			(u8)0
+#define EXTI_u8_ANY_LOGICAL_CHANGE_TRIGGER (u8)1
+#define EXTI_u8_FALLING_EDGE_TRIGGER		(u8)2
+#define EXTI_u8_RISING_EDGE_TRIGGER			(u8)3
+
+/* Available APIs section											*/
+
+/********************************************************************/
+/* Name: EXTI_SetCallBack											*/
+/* Description: This function takes a function as an input argument */
+/*				and saves it in a pointer to function, this is set  */
+/*              to let the ISR call the callback function which will*/
+/*				be executed whenever a corresponding interrupt 		*/
+/*				occurs												*/
+/* Inputs: function name (copy_PFvFunctionName)						*/
+/*		   interrupt number (copy_u8InterruptNB)					*/
+/* Outputs: error status											*/
+/********************************************************************/
+u8 EXTI_SetCallBack(void (* copy_PFvFunctionName)(void), u8 copy_u8InterruptNB);
+
+/********************************************************************/
+/* Name: __vector_1													*/
+/* Description: This is the ISR for interrupt 0						*/
+/* Inputs: Void														*/
+/* Outputs: Void													*/
+/********************************************************************/
+void __vector_1 (void) __attribute__((signal));
+
+/********************************************************************/
+/* Name: __vector_2													*/
+/* Description: This is the ISR for interrupt 1						*/
+/* Inputs: void														*/
+/* Outputs: void													*/
+/********************************************************************/
+void __vector_2 (void) __attribute__((signal));
+
+/********************************************************************/
+/* Name: __vector_3													*/
+/* Description: This is the ISR for interrupt 2						*/
+/* Inputs: void														*/
+/* Outputs: void													*/
+/********************************************************************/
+void __vector_3 (void) __attribute__((signal));
+
+/********************************************************************/
+/* Name: EXTI_SetInterruptState										*/
+/* Description: This is an API used to set the enable disable state */
+/*				for external interrupts								*/
+/* Inputs: Interrupt number (copy_InterruptNB)						*/
+/*  	   Interrupt state (copy_InterruptState)					*/
+/* Outputs: Interrupt state (local_ErrorState)						*/
+/********************************************************************/
+u8 EXTI_SetInterruptState (u8 copy_InterruptNB, u8 copy_InterruptState);
+
+
+
+
+
+
+#endif /* EXTI_INTERFACE_H_ */

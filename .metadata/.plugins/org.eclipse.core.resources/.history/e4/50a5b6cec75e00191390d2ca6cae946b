@@ -1,0 +1,37 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the program file which includes the logic for external	*/
+/* interrupts for ATmega32											*/
+/********************************************************************/
+
+/* Header files included in this source code file					*/
+#include "STD_Types.h"
+#include "EXTI_Interface.h"
+#include "EXTI_Private.h"
+
+/********************************************************************/
+/* Name: EXTI_vInitialize											*/
+/* Description: This is an API used to initialize external interrupt*/
+/* Inputs: void														*/
+/* Outputs: void													*/
+/********************************************************************/
+void EXTI_vInitialize (void)
+{
+	/* Local variables definitions 									*/
+	u8 local_LoopCounter;
+
+	/* Disable external interrupts by clearing I-bit in SREG		*/
+	MCU_u8_SREG &= (~(1 << MCU_u8_SREG_I_BIT));
+
+	/* Loop used to initialize values for interrupt registers		*/
+	for(local_LoopCounter = NULL; local_LoopCounter < EXTI_u8_NO_OF_INTERRUPTS; local_LoopCounter++)
+	{
+
+	}
+}
+

@@ -1,0 +1,21 @@
+/************************************************************************************/
+/* Author  : Islam A.                                                               */
+/* Date    : 08 FEB 2019                                                            */
+/* Version : V01                                                                    */
+/************************************************************************************/
+/* Description                                                                      */
+/* ------------                                                                     */
+/*  This is the application file, where you can write a simple application to test  */
+/*  the functionality of DIO														*/
+/************************************************************************************/
+#include "STD_Types.h"
+
+void main (void)
+{
+
+
+		while (1)
+		{
+
+		}
+}

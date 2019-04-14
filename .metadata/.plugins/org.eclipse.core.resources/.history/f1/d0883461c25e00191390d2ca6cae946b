@@ -1,0 +1,34 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the private file of external interrupt driver for        */
+/* ATmega32. This header file should include private values,        */
+/* private addresses, and registers									*/
+/********************************************************************/
+
+#ifndef EXTI_PRIVATE_H_
+#define EXTI_PRIVATE_H_
+
+/* Include private configuration files 								*/
+#include "EXTI_Config.h"
+
+/* Define number of external interrupts 							*/
+#define EXTI_u8_NO_OF_INTERRUPTS	(u8)3
+
+/* Peripheral Interrupt enable and disable flag						*/
+#define EXTI_u8_PIE_ENABLE			(u8)1
+#define EXTI_u8_PIE_DISABLE			(u8)0
+
+/* External Interrupt indices										*/
+#define EXTI_u8_INT0				(u8)0
+#define EXTI_u8_INT1				(u8)1
+#define EXTI_u8_INT2				(u8)2
+
+/* Define addresses of interrupt registers							*/
+#define
+
+#endif /* EXTI_PRIVATE_H_ */

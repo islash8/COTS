@@ -1,0 +1,39 @@
+/********************************************************************/
+/* Author  : Islam A.                                               */
+/* Date    : 14 APR ٌِ؛ 2019                                           */
+/* Version : V01                                                    */
+/********************************************************************/
+/* Description                                                      */
+/* ------------                                                     */
+/* This is the configuration file for external interrupt driver for */
+/* ATmega32                                                         */
+/********************************************************************/
+
+/* Public configuration section										*/
+#ifndef EXTI_PUBLIC_CONFIG_H_
+#ifdef  EXTI_INTERFACE_H_
+#define EXTI_PUBLIC_CONFIG_H_
+
+/* This is the public configuration part which would be included	*/
+/* in the interface.h file											*/
+
+#endif /* EXTI_INTERFACE_H_ */
+#endif /* EXTI_PUBLIC_CONFIG_H_ */
+
+/********************************************************************/
+
+/* Private configuration section									*/
+#ifndef EXTI_PRIVATE_CONFIG_H_
+#ifdef  EXTI_PRIVATE_H_
+#define EXTI_PRIVATE_CONFIG_H_
+
+/* Array contains the interrupt state whether it's enabled or disabled */
+u8 EXTI_Au8InterruptState[EXTI_u8_NO_OF_INTERRUPTS]
+= {EXTI_u8_INT_ENABLE, EXTI_u8_INT_DISABLE, EXTI_u8_INT_DISABLE};
+
+/* Array contains the interrupt sensing level, whether it's edge    */
+/* or level triggered or both 								        */
+u8 EXTI_Au8InterruptSensingTrigger[EXTI_u8_NUMBER_OF_INTERRUPTS];
+
+#endif /* EXTI_PRIVATE_H_ */
+#endif /* EXTI_PRIVATE_CONFIG_H_ */

@@ -1,0 +1,24 @@
+19:41:55 **** Incremental Build of configuration Debug for project EXTI ****
+make all 
+Building file: ../EXTI_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"EXTI_prog.d" -MT"EXTI_prog.o" -c -o "EXTI_prog.o" "../EXTI_prog.c"
+Finished building: ../EXTI_prog.c
+ 
+Building file: ../Lib_Delay.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Lib_Delay.d" -MT"Lib_Delay.o" -c -o "Lib_Delay.o" "../Lib_Delay.c"
+Finished building: ../Lib_Delay.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:13:10: fatal error: DIO_Interface.h: No such file or directory
+ #include "DIO_Interface.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [subdir.mk:26: main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+19:41:55 Build Failed. 2 errors, 0 warnings. (took 568ms)
+
