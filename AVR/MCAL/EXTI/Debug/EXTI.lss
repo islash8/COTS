@@ -1,0 +1,1174 @@
+
+EXTI.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000674  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000006  00800060  00000674  00000708  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000006  00800066  00800066  0000070e  2**0
+                  ALLOC
+  3 .stab         00001020  00000000  00000000  00000710  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000bbf  00000000  00000000  00001730  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      00000011  00000000  00000000  000022ef  2**0
+                  CONTENTS, READONLY
+  6 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00002300  2**2
+                  CONTENTS, READONLY
+  7 .debug_info   000004e6  00000000  00000000  0000233c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000004a3  00000000  00000000  00002822  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   0000001d  00000000  00000000  00002cc5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000196  00000000  00000000  00002ce2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 a8 00 	jmp	0x150	; 0x150 <__vector_1>
+   8:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__vector_2>
+   c:	0c 94 12 01 	jmp	0x224	; 0x224 <__vector_3>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e7       	ldi	r30, 0x74	; 116
+  68:	f6 e0       	ldi	r31, 0x06	; 6
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a6 36       	cpi	r26, 0x66	; 102
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	a6 e6       	ldi	r26, 0x66	; 102
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	ac 36       	cpi	r26, 0x6C	; 108
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 24 03 	call	0x648	; 0x648 <main>
+  8a:	0c 94 38 03 	jmp	0x670	; 0x670 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <EXTI_vInitialize>:
+/* Description: This is an API used to initialize external interrupt*/
+/* Inputs: void														*/
+/* Outputs: void													*/
+/********************************************************************/
+void EXTI_vInitialize (void)
+{
+  92:	cf 93       	push	r28
+  94:	df 93       	push	r29
+  96:	0f 92       	push	r0
+  98:	cd b7       	in	r28, 0x3d	; 61
+  9a:	de b7       	in	r29, 0x3e	; 62
+	/* Local variables definitions 									*/
+	u8 local_LoopCounter;
+
+	/* Disable external interrupts by clearing I-bit in SREG		*/
+	MCU_u8_SREG &= (~(1 << MCU_u8_SREG_I_BIT));
+  9c:	8f e5       	ldi	r24, 0x5F	; 95
+  9e:	90 e0       	ldi	r25, 0x00	; 0
+  a0:	fc 01       	movw	r30, r24
+  a2:	20 81       	ld	r18, Z
+  a4:	8f e5       	ldi	r24, 0x5F	; 95
+  a6:	90 e0       	ldi	r25, 0x00	; 0
+  a8:	2f 77       	andi	r18, 0x7F	; 127
+  aa:	fc 01       	movw	r30, r24
+  ac:	20 83       	st	Z, r18
+
+	/* Loop used to initialize values for interrupt registers		*/
+	for(local_LoopCounter = NULL; local_LoopCounter < EXTI_u8_NO_OF_INTERRUPTS; local_LoopCounter++)
+  ae:	19 82       	std	Y+1, r1	; 0x01
+  b0:	19 c0       	rjmp	.+50     	; 0xe4 <EXTI_vInitialize+0x52>
+	{
+		/* Set the interrupt enable state, whether it's enable or 	*/
+		/* disable													*/
+		EXTI_SetInterruptState(local_LoopCounter, EXTI_Au8InterruptState[local_LoopCounter]);
+  b2:	89 81       	ldd	r24, Y+1	; 0x01
+  b4:	88 2f       	mov	r24, r24
+  b6:	90 e0       	ldi	r25, 0x00	; 0
+  b8:	80 5a       	subi	r24, 0xA0	; 160
+  ba:	9f 4f       	sbci	r25, 0xFF	; 255
+  bc:	fc 01       	movw	r30, r24
+  be:	80 81       	ld	r24, Z
+  c0:	68 2f       	mov	r22, r24
+  c2:	89 81       	ldd	r24, Y+1	; 0x01
+  c4:	0e 94 47 01 	call	0x28e	; 0x28e <EXTI_SetInterruptState>
+
+		/* Set the interrupt trigger mode							*/
+		EXTI_SetInterruptTrigger (local_LoopCounter, EXTI_Au8InterruptSensingTrigger[local_LoopCounter]);
+  c8:	89 81       	ldd	r24, Y+1	; 0x01
+  ca:	88 2f       	mov	r24, r24
+  cc:	90 e0       	ldi	r25, 0x00	; 0
+  ce:	8d 59       	subi	r24, 0x9D	; 157
+  d0:	9f 4f       	sbci	r25, 0xFF	; 255
+  d2:	fc 01       	movw	r30, r24
+  d4:	80 81       	ld	r24, Z
+  d6:	68 2f       	mov	r22, r24
+  d8:	89 81       	ldd	r24, Y+1	; 0x01
+  da:	0e 94 bf 01 	call	0x37e	; 0x37e <EXTI_SetInterruptTrigger>
+	for(local_LoopCounter = NULL; local_LoopCounter < EXTI_u8_NO_OF_INTERRUPTS; local_LoopCounter++)
+  de:	89 81       	ldd	r24, Y+1	; 0x01
+  e0:	8f 5f       	subi	r24, 0xFF	; 255
+  e2:	89 83       	std	Y+1, r24	; 0x01
+  e4:	89 81       	ldd	r24, Y+1	; 0x01
+  e6:	83 30       	cpi	r24, 0x03	; 3
+  e8:	20 f3       	brcs	.-56     	; 0xb2 <EXTI_vInitialize+0x20>
+	}
+
+	/* Enable Interrupts in I-bit in SREG register					*/
+	MCU_u8_SREG |= (1 << MCU_u8_SREG_I_BIT);
+  ea:	8f e5       	ldi	r24, 0x5F	; 95
+  ec:	90 e0       	ldi	r25, 0x00	; 0
+  ee:	fc 01       	movw	r30, r24
+  f0:	20 81       	ld	r18, Z
+  f2:	8f e5       	ldi	r24, 0x5F	; 95
+  f4:	90 e0       	ldi	r25, 0x00	; 0
+  f6:	20 68       	ori	r18, 0x80	; 128
+  f8:	fc 01       	movw	r30, r24
+  fa:	20 83       	st	Z, r18
+}
+  fc:	00 00       	nop
+  fe:	0f 90       	pop	r0
+ 100:	df 91       	pop	r29
+ 102:	cf 91       	pop	r28
+ 104:	08 95       	ret
+
+00000106 <EXTI_SetCallBack>:
+/* Inputs: function name (copy_PFvFunctionName)						*/
+/*		   interrupt number (copy_u8InterruptNB)					*/
+/* Outputs: error status											*/
+/********************************************************************/
+u8 EXTI_SetCallBack(void (* copy_PFvFunctionName)(void), u8 copy_u8InterruptNB)
+{
+ 106:	cf 93       	push	r28
+ 108:	df 93       	push	r29
+ 10a:	00 d0       	rcall	.+0      	; 0x10c <EXTI_SetCallBack+0x6>
+ 10c:	00 d0       	rcall	.+0      	; 0x10e <EXTI_SetCallBack+0x8>
+ 10e:	cd b7       	in	r28, 0x3d	; 61
+ 110:	de b7       	in	r29, 0x3e	; 62
+ 112:	9b 83       	std	Y+3, r25	; 0x03
+ 114:	8a 83       	std	Y+2, r24	; 0x02
+ 116:	6c 83       	std	Y+4, r22	; 0x04
+	/* local variable definitions 									*/
+	u8 local_ErrorState = STD_ERROR_OK;
+ 118:	81 e0       	ldi	r24, 0x01	; 1
+ 11a:	89 83       	std	Y+1, r24	; 0x01
+
+	/* Check for input argument valid or not						*/
+	if(copy_u8InterruptNB >= EXTI_u8_NO_OF_INTERRUPTS)
+ 11c:	8c 81       	ldd	r24, Y+4	; 0x04
+ 11e:	83 30       	cpi	r24, 0x03	; 3
+ 120:	18 f0       	brcs	.+6      	; 0x128 <EXTI_SetCallBack+0x22>
+	{
+		local_ErrorState = STD_ERROR_OK;
+ 122:	81 e0       	ldi	r24, 0x01	; 1
+ 124:	89 83       	std	Y+1, r24	; 0x01
+ 126:	0c c0       	rjmp	.+24     	; 0x140 <EXTI_SetCallBack+0x3a>
+	}
+	else
+	{
+		/* Set pointer with address of passed function				*/
+		APFvFunctionCallBack[copy_u8InterruptNB] = copy_PFvFunctionName;
+ 128:	8c 81       	ldd	r24, Y+4	; 0x04
+ 12a:	88 2f       	mov	r24, r24
+ 12c:	90 e0       	ldi	r25, 0x00	; 0
+ 12e:	88 0f       	add	r24, r24
+ 130:	99 1f       	adc	r25, r25
+ 132:	8a 59       	subi	r24, 0x9A	; 154
+ 134:	9f 4f       	sbci	r25, 0xFF	; 255
+ 136:	2a 81       	ldd	r18, Y+2	; 0x02
+ 138:	3b 81       	ldd	r19, Y+3	; 0x03
+ 13a:	fc 01       	movw	r30, r24
+ 13c:	31 83       	std	Z+1, r19	; 0x01
+ 13e:	20 83       	st	Z, r18
+	}
+
+	/*return state													*/
+	return local_ErrorState;
+ 140:	89 81       	ldd	r24, Y+1	; 0x01
+}
+ 142:	0f 90       	pop	r0
+ 144:	0f 90       	pop	r0
+ 146:	0f 90       	pop	r0
+ 148:	0f 90       	pop	r0
+ 14a:	df 91       	pop	r29
+ 14c:	cf 91       	pop	r28
+ 14e:	08 95       	ret
+
+00000150 <__vector_1>:
+/* Description: This is the ISR for interrupt 0						*/
+/* Inputs: Void														*/
+/* Outputs: Void													*/
+/********************************************************************/
+void __vector_1 (void)
+{
+ 150:	1f 92       	push	r1
+ 152:	0f 92       	push	r0
+ 154:	0f b6       	in	r0, 0x3f	; 63
+ 156:	0f 92       	push	r0
+ 158:	11 24       	eor	r1, r1
+ 15a:	2f 93       	push	r18
+ 15c:	3f 93       	push	r19
+ 15e:	4f 93       	push	r20
+ 160:	5f 93       	push	r21
+ 162:	6f 93       	push	r22
+ 164:	7f 93       	push	r23
+ 166:	8f 93       	push	r24
+ 168:	9f 93       	push	r25
+ 16a:	af 93       	push	r26
+ 16c:	bf 93       	push	r27
+ 16e:	ef 93       	push	r30
+ 170:	ff 93       	push	r31
+ 172:	cf 93       	push	r28
+ 174:	df 93       	push	r29
+ 176:	cd b7       	in	r28, 0x3d	; 61
+ 178:	de b7       	in	r29, 0x3e	; 62
+	/* Pointer validation pointing to a valid function				*/
+	if(APFvFunctionCallBack[EXTI_u8_INT0] != NULL_PTR)
+ 17a:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
+ 17e:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <__data_end+0x1>
+ 182:	89 2b       	or	r24, r25
+ 184:	31 f0       	breq	.+12     	; 0x192 <__vector_1+0x42>
+	{
+		/* calling function corresponding to vector 1				*/
+		APFvFunctionCallBack[EXTI_u8_INT0] ();
+ 186:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <__data_end>
+ 18a:	90 91 67 00 	lds	r25, 0x0067	; 0x800067 <__data_end+0x1>
+ 18e:	fc 01       	movw	r30, r24
+ 190:	09 95       	icall
+	}
+}
+ 192:	00 00       	nop
+ 194:	df 91       	pop	r29
+ 196:	cf 91       	pop	r28
+ 198:	ff 91       	pop	r31
+ 19a:	ef 91       	pop	r30
+ 19c:	bf 91       	pop	r27
+ 19e:	af 91       	pop	r26
+ 1a0:	9f 91       	pop	r25
+ 1a2:	8f 91       	pop	r24
+ 1a4:	7f 91       	pop	r23
+ 1a6:	6f 91       	pop	r22
+ 1a8:	5f 91       	pop	r21
+ 1aa:	4f 91       	pop	r20
+ 1ac:	3f 91       	pop	r19
+ 1ae:	2f 91       	pop	r18
+ 1b0:	0f 90       	pop	r0
+ 1b2:	0f be       	out	0x3f, r0	; 63
+ 1b4:	0f 90       	pop	r0
+ 1b6:	1f 90       	pop	r1
+ 1b8:	18 95       	reti
+
+000001ba <__vector_2>:
+/* Description: This is the ISR for interrupt 1						*/
+/* Inputs: Void														*/
+/* Outputs: Void													*/
+/********************************************************************/
+void __vector_2 (void)
+{
+ 1ba:	1f 92       	push	r1
+ 1bc:	0f 92       	push	r0
+ 1be:	0f b6       	in	r0, 0x3f	; 63
+ 1c0:	0f 92       	push	r0
+ 1c2:	11 24       	eor	r1, r1
+ 1c4:	2f 93       	push	r18
+ 1c6:	3f 93       	push	r19
+ 1c8:	4f 93       	push	r20
+ 1ca:	5f 93       	push	r21
+ 1cc:	6f 93       	push	r22
+ 1ce:	7f 93       	push	r23
+ 1d0:	8f 93       	push	r24
+ 1d2:	9f 93       	push	r25
+ 1d4:	af 93       	push	r26
+ 1d6:	bf 93       	push	r27
+ 1d8:	ef 93       	push	r30
+ 1da:	ff 93       	push	r31
+ 1dc:	cf 93       	push	r28
+ 1de:	df 93       	push	r29
+ 1e0:	cd b7       	in	r28, 0x3d	; 61
+ 1e2:	de b7       	in	r29, 0x3e	; 62
+	/* Pointer validation pointing to a valid function				*/
+	if(APFvFunctionCallBack[EXTI_u8_INT1] != NULL_PTR)
+ 1e4:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <__data_end+0x2>
+ 1e8:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <__data_end+0x3>
+ 1ec:	89 2b       	or	r24, r25
+ 1ee:	31 f0       	breq	.+12     	; 0x1fc <__vector_2+0x42>
+	{
+		/* calling function corresponding to vector 2				*/
+		APFvFunctionCallBack[EXTI_u8_INT1] ();
+ 1f0:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <__data_end+0x2>
+ 1f4:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <__data_end+0x3>
+ 1f8:	fc 01       	movw	r30, r24
+ 1fa:	09 95       	icall
+	}
+}
+ 1fc:	00 00       	nop
+ 1fe:	df 91       	pop	r29
+ 200:	cf 91       	pop	r28
+ 202:	ff 91       	pop	r31
+ 204:	ef 91       	pop	r30
+ 206:	bf 91       	pop	r27
+ 208:	af 91       	pop	r26
+ 20a:	9f 91       	pop	r25
+ 20c:	8f 91       	pop	r24
+ 20e:	7f 91       	pop	r23
+ 210:	6f 91       	pop	r22
+ 212:	5f 91       	pop	r21
+ 214:	4f 91       	pop	r20
+ 216:	3f 91       	pop	r19
+ 218:	2f 91       	pop	r18
+ 21a:	0f 90       	pop	r0
+ 21c:	0f be       	out	0x3f, r0	; 63
+ 21e:	0f 90       	pop	r0
+ 220:	1f 90       	pop	r1
+ 222:	18 95       	reti
+
+00000224 <__vector_3>:
+/* Description: This is the ISR for interrupt 2						*/
+/* Inputs: Void														*/
+/* Outputs: Void													*/
+/********************************************************************/
+void __vector_3 (void)
+{
+ 224:	1f 92       	push	r1
+ 226:	0f 92       	push	r0
+ 228:	0f b6       	in	r0, 0x3f	; 63
+ 22a:	0f 92       	push	r0
+ 22c:	11 24       	eor	r1, r1
+ 22e:	2f 93       	push	r18
+ 230:	3f 93       	push	r19
+ 232:	4f 93       	push	r20
+ 234:	5f 93       	push	r21
+ 236:	6f 93       	push	r22
+ 238:	7f 93       	push	r23
+ 23a:	8f 93       	push	r24
+ 23c:	9f 93       	push	r25
+ 23e:	af 93       	push	r26
+ 240:	bf 93       	push	r27
+ 242:	ef 93       	push	r30
+ 244:	ff 93       	push	r31
+ 246:	cf 93       	push	r28
+ 248:	df 93       	push	r29
+ 24a:	cd b7       	in	r28, 0x3d	; 61
+ 24c:	de b7       	in	r29, 0x3e	; 62
+	/* Pointer validation pointing to a valid function				*/
+	if(APFvFunctionCallBack[EXTI_u8_INT2] != NULL_PTR)
+ 24e:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <__data_end+0x4>
+ 252:	90 91 6b 00 	lds	r25, 0x006B	; 0x80006b <__data_end+0x5>
+ 256:	89 2b       	or	r24, r25
+ 258:	31 f0       	breq	.+12     	; 0x266 <__vector_3+0x42>
+	{
+		/* calling function corresponding to vector 3				*/
+		APFvFunctionCallBack[EXTI_u8_INT2] ();
+ 25a:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <__data_end+0x4>
+ 25e:	90 91 6b 00 	lds	r25, 0x006B	; 0x80006b <__data_end+0x5>
+ 262:	fc 01       	movw	r30, r24
+ 264:	09 95       	icall
+	}
+}
+ 266:	00 00       	nop
+ 268:	df 91       	pop	r29
+ 26a:	cf 91       	pop	r28
+ 26c:	ff 91       	pop	r31
+ 26e:	ef 91       	pop	r30
+ 270:	bf 91       	pop	r27
+ 272:	af 91       	pop	r26
+ 274:	9f 91       	pop	r25
+ 276:	8f 91       	pop	r24
+ 278:	7f 91       	pop	r23
+ 27a:	6f 91       	pop	r22
+ 27c:	5f 91       	pop	r21
+ 27e:	4f 91       	pop	r20
+ 280:	3f 91       	pop	r19
+ 282:	2f 91       	pop	r18
+ 284:	0f 90       	pop	r0
+ 286:	0f be       	out	0x3f, r0	; 63
+ 288:	0f 90       	pop	r0
+ 28a:	1f 90       	pop	r1
+ 28c:	18 95       	reti
+
+0000028e <EXTI_SetInterruptState>:
+/* Inputs: Interrupt number (copy_InterruptNB)						*/
+/*  	   Interrupt state (copy_InterruptState)					*/
+/* Outputs: Error state (local_ErrorState)						    */
+/********************************************************************/
+u8 EXTI_SetInterruptState (u8 copy_InterruptNB, u8 copy_InterruptState)
+{
+ 28e:	cf 93       	push	r28
+ 290:	df 93       	push	r29
+ 292:	00 d0       	rcall	.+0      	; 0x294 <EXTI_SetInterruptState+0x6>
+ 294:	0f 92       	push	r0
+ 296:	cd b7       	in	r28, 0x3d	; 61
+ 298:	de b7       	in	r29, 0x3e	; 62
+ 29a:	8a 83       	std	Y+2, r24	; 0x02
+ 29c:	6b 83       	std	Y+3, r22	; 0x03
+	/* Local variables definitions									*/
+	u8 local_ErrorState = STD_ERROR_OK;
+ 29e:	81 e0       	ldi	r24, 0x01	; 1
+ 2a0:	89 83       	std	Y+1, r24	; 0x01
+
+	/* Check input for validation									*/
+	if(copy_InterruptNB >= EXTI_u8_NO_OF_INTERRUPTS)
+ 2a2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 2a4:	83 30       	cpi	r24, 0x03	; 3
+ 2a6:	10 f0       	brcs	.+4      	; 0x2ac <EXTI_SetInterruptState+0x1e>
+	{
+		local_ErrorState = STD_ERROR_NOK;
+ 2a8:	19 82       	std	Y+1, r1	; 0x01
+ 2aa:	62 c0       	rjmp	.+196    	; 0x370 <EXTI_SetInterruptState+0xe2>
+	}
+	else
+	{
+		switch(copy_InterruptState)
+ 2ac:	8b 81       	ldd	r24, Y+3	; 0x03
+ 2ae:	88 2f       	mov	r24, r24
+ 2b0:	90 e0       	ldi	r25, 0x00	; 0
+ 2b2:	00 97       	sbiw	r24, 0x00	; 0
+ 2b4:	71 f1       	breq	.+92     	; 0x312 <EXTI_SetInterruptState+0x84>
+ 2b6:	01 97       	sbiw	r24, 0x01	; 1
+ 2b8:	09 f0       	breq	.+2      	; 0x2bc <EXTI_SetInterruptState+0x2e>
+ 2ba:	58 c0       	rjmp	.+176    	; 0x36c <EXTI_SetInterruptState+0xde>
+		{
+			case EXTI_u8_INT_ENABLE:
+				/* Switch on the interrupt index                  */
+				switch(copy_InterruptNB)
+ 2bc:	8a 81       	ldd	r24, Y+2	; 0x02
+ 2be:	88 2f       	mov	r24, r24
+ 2c0:	90 e0       	ldi	r25, 0x00	; 0
+ 2c2:	81 30       	cpi	r24, 0x01	; 1
+ 2c4:	91 05       	cpc	r25, r1
+ 2c6:	81 f0       	breq	.+32     	; 0x2e8 <EXTI_SetInterruptState+0x5a>
+ 2c8:	82 30       	cpi	r24, 0x02	; 2
+ 2ca:	91 05       	cpc	r25, r1
+ 2cc:	b9 f0       	breq	.+46     	; 0x2fc <EXTI_SetInterruptState+0x6e>
+ 2ce:	89 2b       	or	r24, r25
+ 2d0:	09 f0       	breq	.+2      	; 0x2d4 <EXTI_SetInterruptState+0x46>
+ 2d2:	49 c0       	rjmp	.+146    	; 0x366 <EXTI_SetInterruptState+0xd8>
+				{
+					/*** INT0 ***/
+					case EXTI_u8_INT0:
+						/* Enable external interrupt pin INT0          */
+						EXTI_u8_GICR |= (EXTI_u8_INT_ENABLE <<EXTI_u8_GICR_INT0_BIT);
+ 2d4:	8b e5       	ldi	r24, 0x5B	; 91
+ 2d6:	90 e0       	ldi	r25, 0x00	; 0
+ 2d8:	fc 01       	movw	r30, r24
+ 2da:	20 81       	ld	r18, Z
+ 2dc:	8b e5       	ldi	r24, 0x5B	; 91
+ 2de:	90 e0       	ldi	r25, 0x00	; 0
+ 2e0:	20 64       	ori	r18, 0x40	; 64
+ 2e2:	fc 01       	movw	r30, r24
+ 2e4:	20 83       	st	Z, r18
+						break;
+ 2e6:	14 c0       	rjmp	.+40     	; 0x310 <EXTI_SetInterruptState+0x82>
+
+					/*** INT1 ***/
+					case EXTI_u8_INT1:
+					/* Enable external interrupt pin INT1          */
+					EXTI_u8_GICR |= (EXTI_u8_INT_ENABLE <<EXTI_u8_GICR_INT1_BIT);
+ 2e8:	8b e5       	ldi	r24, 0x5B	; 91
+ 2ea:	90 e0       	ldi	r25, 0x00	; 0
+ 2ec:	fc 01       	movw	r30, r24
+ 2ee:	20 81       	ld	r18, Z
+ 2f0:	8b e5       	ldi	r24, 0x5B	; 91
+ 2f2:	90 e0       	ldi	r25, 0x00	; 0
+ 2f4:	20 68       	ori	r18, 0x80	; 128
+ 2f6:	fc 01       	movw	r30, r24
+ 2f8:	20 83       	st	Z, r18
+					break;
+ 2fa:	0a c0       	rjmp	.+20     	; 0x310 <EXTI_SetInterruptState+0x82>
+
+					/*** INT2 ***/
+					case EXTI_u8_INT2:
+					/* Enable external interrupt pin INT2          */
+					EXTI_u8_GICR |= (EXTI_u8_INT_ENABLE <<EXTI_u8_GICR_INT2_BIT);
+ 2fc:	8b e5       	ldi	r24, 0x5B	; 91
+ 2fe:	90 e0       	ldi	r25, 0x00	; 0
+ 300:	fc 01       	movw	r30, r24
+ 302:	20 81       	ld	r18, Z
+ 304:	8b e5       	ldi	r24, 0x5B	; 91
+ 306:	90 e0       	ldi	r25, 0x00	; 0
+ 308:	20 62       	ori	r18, 0x20	; 32
+ 30a:	fc 01       	movw	r30, r24
+ 30c:	20 83       	st	Z, r18
+					break;
+ 30e:	00 00       	nop
+				}
+				break;
+ 310:	2a c0       	rjmp	.+84     	; 0x366 <EXTI_SetInterruptState+0xd8>
+			case EXTI_u8_INT_DISABLE:
+				/* Switch on the interrupt index                  */
+				switch(copy_InterruptNB)
+ 312:	8a 81       	ldd	r24, Y+2	; 0x02
+ 314:	88 2f       	mov	r24, r24
+ 316:	90 e0       	ldi	r25, 0x00	; 0
+ 318:	81 30       	cpi	r24, 0x01	; 1
+ 31a:	91 05       	cpc	r25, r1
+ 31c:	79 f0       	breq	.+30     	; 0x33c <EXTI_SetInterruptState+0xae>
+ 31e:	82 30       	cpi	r24, 0x02	; 2
+ 320:	91 05       	cpc	r25, r1
+ 322:	b1 f0       	breq	.+44     	; 0x350 <EXTI_SetInterruptState+0xc2>
+ 324:	89 2b       	or	r24, r25
+ 326:	09 f5       	brne	.+66     	; 0x36a <EXTI_SetInterruptState+0xdc>
+				{
+					/*** INT0 ***/
+					case EXTI_u8_INT0:
+						/* Disable external interrupt pin INT0          */
+						EXTI_u8_GICR &= (~(EXTI_u8_INT_ENABLE <<EXTI_u8_GICR_INT0_BIT));
+ 328:	8b e5       	ldi	r24, 0x5B	; 91
+ 32a:	90 e0       	ldi	r25, 0x00	; 0
+ 32c:	fc 01       	movw	r30, r24
+ 32e:	20 81       	ld	r18, Z
+ 330:	8b e5       	ldi	r24, 0x5B	; 91
+ 332:	90 e0       	ldi	r25, 0x00	; 0
+ 334:	2f 7b       	andi	r18, 0xBF	; 191
+ 336:	fc 01       	movw	r30, r24
+ 338:	20 83       	st	Z, r18
+						break;
+ 33a:	14 c0       	rjmp	.+40     	; 0x364 <EXTI_SetInterruptState+0xd6>
+
+					/*** INT1 ***/
+					case EXTI_u8_INT1:
+						/* Disable external interrupt pin INT1          */
+						EXTI_u8_GICR &= (~(EXTI_u8_INT_ENABLE <<EXTI_u8_GICR_INT1_BIT));
+ 33c:	8b e5       	ldi	r24, 0x5B	; 91
+ 33e:	90 e0       	ldi	r25, 0x00	; 0
+ 340:	fc 01       	movw	r30, r24
+ 342:	20 81       	ld	r18, Z
+ 344:	8b e5       	ldi	r24, 0x5B	; 91
+ 346:	90 e0       	ldi	r25, 0x00	; 0
+ 348:	2f 77       	andi	r18, 0x7F	; 127
+ 34a:	fc 01       	movw	r30, r24
+ 34c:	20 83       	st	Z, r18
+						break;
+ 34e:	0a c0       	rjmp	.+20     	; 0x364 <EXTI_SetInterruptState+0xd6>
+
+					/*** INT2 ***/
+					case EXTI_u8_INT2:
+						/* Disable external interrupt pin INT2          */
+						EXTI_u8_GICR &= (~(EXTI_u8_INT_ENABLE <<EXTI_u8_GICR_INT2_BIT));
+ 350:	8b e5       	ldi	r24, 0x5B	; 91
+ 352:	90 e0       	ldi	r25, 0x00	; 0
+ 354:	fc 01       	movw	r30, r24
+ 356:	20 81       	ld	r18, Z
+ 358:	8b e5       	ldi	r24, 0x5B	; 91
+ 35a:	90 e0       	ldi	r25, 0x00	; 0
+ 35c:	2f 7d       	andi	r18, 0xDF	; 223
+ 35e:	fc 01       	movw	r30, r24
+ 360:	20 83       	st	Z, r18
+						break;
+ 362:	00 00       	nop
+				}
+				break;
+ 364:	02 c0       	rjmp	.+4      	; 0x36a <EXTI_SetInterruptState+0xdc>
+				break;
+ 366:	00 00       	nop
+ 368:	01 c0       	rjmp	.+2      	; 0x36c <EXTI_SetInterruptState+0xde>
+				break;
+ 36a:	00 00       	nop
+		}
+		local_ErrorState = STD_ERROR_OK;
+ 36c:	81 e0       	ldi	r24, 0x01	; 1
+ 36e:	89 83       	std	Y+1, r24	; 0x01
+	}
+
+	return local_ErrorState;
+ 370:	89 81       	ldd	r24, Y+1	; 0x01
+}
+ 372:	0f 90       	pop	r0
+ 374:	0f 90       	pop	r0
+ 376:	0f 90       	pop	r0
+ 378:	df 91       	pop	r29
+ 37a:	cf 91       	pop	r28
+ 37c:	08 95       	ret
+
+0000037e <EXTI_SetInterruptTrigger>:
+/* Inputs: Interrupt number (copy_InterruptNB)						*/
+/*		   Interrupt trigger (copy_InterruptTrigger)				*/
+/* Outputs: Error state (local_ErrorState)							*/
+/********************************************************************/
+u8 EXTI_SetInterruptTrigger (u8 copy_InterruptNB, u8 copy_InterruptTrigger)
+{
+ 37e:	cf 93       	push	r28
+ 380:	df 93       	push	r29
+ 382:	00 d0       	rcall	.+0      	; 0x384 <EXTI_SetInterruptTrigger+0x6>
+ 384:	0f 92       	push	r0
+ 386:	cd b7       	in	r28, 0x3d	; 61
+ 388:	de b7       	in	r29, 0x3e	; 62
+ 38a:	8a 83       	std	Y+2, r24	; 0x02
+ 38c:	6b 83       	std	Y+3, r22	; 0x03
+	/* local variable definitions									*/
+	u8 local_ErrorState = STD_ERROR_OK;
+ 38e:	81 e0       	ldi	r24, 0x01	; 1
+ 390:	89 83       	std	Y+1, r24	; 0x01
+
+	/* Input validation												*/
+	if(copy_InterruptNB >= EXTI_u8_NO_OF_INTERRUPTS)
+ 392:	8a 81       	ldd	r24, Y+2	; 0x02
+ 394:	83 30       	cpi	r24, 0x03	; 3
+ 396:	10 f0       	brcs	.+4      	; 0x39c <EXTI_SetInterruptTrigger+0x1e>
+	{
+		local_ErrorState = STD_ERROR_NOK;
+ 398:	19 82       	std	Y+1, r1	; 0x01
+ 39a:	d3 c0       	rjmp	.+422    	; 0x542 <__FUSE_REGION_LENGTH__+0x142>
+	}
+	else
+	{
+		switch(copy_InterruptTrigger)
+ 39c:	8b 81       	ldd	r24, Y+3	; 0x03
+ 39e:	88 2f       	mov	r24, r24
+ 3a0:	90 e0       	ldi	r25, 0x00	; 0
+ 3a2:	81 30       	cpi	r24, 0x01	; 1
+ 3a4:	91 05       	cpc	r25, r1
+ 3a6:	d1 f1       	breq	.+116    	; 0x41c <__FUSE_REGION_LENGTH__+0x1c>
+ 3a8:	82 30       	cpi	r24, 0x02	; 2
+ 3aa:	91 05       	cpc	r25, r1
+ 3ac:	1c f4       	brge	.+6      	; 0x3b4 <EXTI_SetInterruptTrigger+0x36>
+ 3ae:	89 2b       	or	r24, r25
+ 3b0:	49 f0       	breq	.+18     	; 0x3c4 <EXTI_SetInterruptTrigger+0x46>
+ 3b2:	c5 c0       	rjmp	.+394    	; 0x53e <__FUSE_REGION_LENGTH__+0x13e>
+ 3b4:	82 30       	cpi	r24, 0x02	; 2
+ 3b6:	91 05       	cpc	r25, r1
+ 3b8:	09 f4       	brne	.+2      	; 0x3bc <EXTI_SetInterruptTrigger+0x3e>
+ 3ba:	5c c0       	rjmp	.+184    	; 0x474 <__FUSE_REGION_LENGTH__+0x74>
+ 3bc:	03 97       	sbiw	r24, 0x03	; 3
+ 3be:	09 f4       	brne	.+2      	; 0x3c2 <EXTI_SetInterruptTrigger+0x44>
+ 3c0:	90 c0       	rjmp	.+288    	; 0x4e2 <__FUSE_REGION_LENGTH__+0xe2>
+ 3c2:	bd c0       	rjmp	.+378    	; 0x53e <__FUSE_REGION_LENGTH__+0x13e>
+		{
+			case EXTI_u8_LOW_LEVEL_TRIGGER:
+				/* INT0 */
+				if(copy_InterruptNB == EXTI_u8_INT0)
+ 3c4:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3c6:	88 23       	and	r24, r24
+ 3c8:	91 f4       	brne	.+36     	; 0x3ee <EXTI_SetInterruptTrigger+0x70>
+				{
+					/* Trigger INT0 to be low level	*/
+					EXTI_u8_MCUCR &= (~(1 << EXTI_u8_MCUCR_ISC00_BIT));
+ 3ca:	85 e5       	ldi	r24, 0x55	; 85
+ 3cc:	90 e0       	ldi	r25, 0x00	; 0
+ 3ce:	fc 01       	movw	r30, r24
+ 3d0:	20 81       	ld	r18, Z
+ 3d2:	85 e5       	ldi	r24, 0x55	; 85
+ 3d4:	90 e0       	ldi	r25, 0x00	; 0
+ 3d6:	2e 7f       	andi	r18, 0xFE	; 254
+ 3d8:	fc 01       	movw	r30, r24
+ 3da:	20 83       	st	Z, r18
+					EXTI_u8_MCUCR &= (~(1 << EXTI_u8_MCUCR_ISC01_BIT));
+ 3dc:	85 e5       	ldi	r24, 0x55	; 85
+ 3de:	90 e0       	ldi	r25, 0x00	; 0
+ 3e0:	fc 01       	movw	r30, r24
+ 3e2:	20 81       	ld	r18, Z
+ 3e4:	85 e5       	ldi	r24, 0x55	; 85
+ 3e6:	90 e0       	ldi	r25, 0x00	; 0
+ 3e8:	2d 7f       	andi	r18, 0xFD	; 253
+ 3ea:	fc 01       	movw	r30, r24
+ 3ec:	20 83       	st	Z, r18
+				}
+
+				/* INT1 */
+				if(copy_InterruptNB == EXTI_u8_INT1)
+ 3ee:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3f0:	81 30       	cpi	r24, 0x01	; 1
+ 3f2:	09 f0       	breq	.+2      	; 0x3f6 <EXTI_SetInterruptTrigger+0x78>
+ 3f4:	9d c0       	rjmp	.+314    	; 0x530 <__FUSE_REGION_LENGTH__+0x130>
+				{
+					/* Trigger INT1 to be low level */
+					EXTI_u8_MCUCR &= (~(1 << EXTI_u8_MCUCR_ISC10_BIT));
+ 3f6:	85 e5       	ldi	r24, 0x55	; 85
+ 3f8:	90 e0       	ldi	r25, 0x00	; 0
+ 3fa:	fc 01       	movw	r30, r24
+ 3fc:	20 81       	ld	r18, Z
+ 3fe:	85 e5       	ldi	r24, 0x55	; 85
+ 400:	90 e0       	ldi	r25, 0x00	; 0
+ 402:	2b 7f       	andi	r18, 0xFB	; 251
+ 404:	fc 01       	movw	r30, r24
+ 406:	20 83       	st	Z, r18
+					EXTI_u8_MCUCR &= (~(1 << EXTI_u8_MCUCR_ISC11_BIT));
+ 408:	85 e5       	ldi	r24, 0x55	; 85
+ 40a:	90 e0       	ldi	r25, 0x00	; 0
+ 40c:	fc 01       	movw	r30, r24
+ 40e:	20 81       	ld	r18, Z
+ 410:	85 e5       	ldi	r24, 0x55	; 85
+ 412:	90 e0       	ldi	r25, 0x00	; 0
+ 414:	27 7f       	andi	r18, 0xF7	; 247
+ 416:	fc 01       	movw	r30, r24
+ 418:	20 83       	st	Z, r18
+				}
+				break;
+ 41a:	8a c0       	rjmp	.+276    	; 0x530 <__FUSE_REGION_LENGTH__+0x130>
+
+			case EXTI_u8_ANY_LOGICAL_CHANGE_TRIGGER:
+				/* INT0 */
+				if(copy_InterruptNB == EXTI_u8_INT0)
+ 41c:	8a 81       	ldd	r24, Y+2	; 0x02
+ 41e:	88 23       	and	r24, r24
+ 420:	91 f4       	brne	.+36     	; 0x446 <__FUSE_REGION_LENGTH__+0x46>
+				{
+					/* Trigger INT0 to be any logical change */
+					EXTI_u8_MCUCR |= (1<<EXTI_u8_MCUCR_ISC00_BIT)    ;
+ 422:	85 e5       	ldi	r24, 0x55	; 85
+ 424:	90 e0       	ldi	r25, 0x00	; 0
+ 426:	fc 01       	movw	r30, r24
+ 428:	20 81       	ld	r18, Z
+ 42a:	85 e5       	ldi	r24, 0x55	; 85
+ 42c:	90 e0       	ldi	r25, 0x00	; 0
+ 42e:	21 60       	ori	r18, 0x01	; 1
+ 430:	fc 01       	movw	r30, r24
+ 432:	20 83       	st	Z, r18
+					EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC01_BIT)) ;
+ 434:	85 e5       	ldi	r24, 0x55	; 85
+ 436:	90 e0       	ldi	r25, 0x00	; 0
+ 438:	fc 01       	movw	r30, r24
+ 43a:	20 81       	ld	r18, Z
+ 43c:	85 e5       	ldi	r24, 0x55	; 85
+ 43e:	90 e0       	ldi	r25, 0x00	; 0
+ 440:	2d 7f       	andi	r18, 0xFD	; 253
+ 442:	fc 01       	movw	r30, r24
+ 444:	20 83       	st	Z, r18
+				}
+
+				/* INT1 */
+				if (copy_InterruptNB == EXTI_u8_INT1)
+ 446:	8a 81       	ldd	r24, Y+2	; 0x02
+ 448:	81 30       	cpi	r24, 0x01	; 1
+ 44a:	09 f0       	breq	.+2      	; 0x44e <__FUSE_REGION_LENGTH__+0x4e>
+ 44c:	73 c0       	rjmp	.+230    	; 0x534 <__FUSE_REGION_LENGTH__+0x134>
+				{
+					/* Trigger INT1 with any logical change          */
+					EXTI_u8_MCUCR |= (1<<EXTI_u8_MCUCR_ISC10_BIT)    ;
+ 44e:	85 e5       	ldi	r24, 0x55	; 85
+ 450:	90 e0       	ldi	r25, 0x00	; 0
+ 452:	fc 01       	movw	r30, r24
+ 454:	20 81       	ld	r18, Z
+ 456:	85 e5       	ldi	r24, 0x55	; 85
+ 458:	90 e0       	ldi	r25, 0x00	; 0
+ 45a:	24 60       	ori	r18, 0x04	; 4
+ 45c:	fc 01       	movw	r30, r24
+ 45e:	20 83       	st	Z, r18
+					EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC11_BIT)) ;
+ 460:	85 e5       	ldi	r24, 0x55	; 85
+ 462:	90 e0       	ldi	r25, 0x00	; 0
+ 464:	fc 01       	movw	r30, r24
+ 466:	20 81       	ld	r18, Z
+ 468:	85 e5       	ldi	r24, 0x55	; 85
+ 46a:	90 e0       	ldi	r25, 0x00	; 0
+ 46c:	27 7f       	andi	r18, 0xF7	; 247
+ 46e:	fc 01       	movw	r30, r24
+ 470:	20 83       	st	Z, r18
+				}
+				break;
+ 472:	60 c0       	rjmp	.+192    	; 0x534 <__FUSE_REGION_LENGTH__+0x134>
+
+			case EXTI_u8_FALLING_EDGE_TRIGGER:
+				/* INT0 */
+				if(copy_InterruptNB == EXTI_u8_INT0)
+ 474:	8a 81       	ldd	r24, Y+2	; 0x02
+ 476:	88 23       	and	r24, r24
+ 478:	91 f4       	brne	.+36     	; 0x49e <__FUSE_REGION_LENGTH__+0x9e>
+				{
+					/* Trigger INT0 to be any logical change */
+					EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC00_BIT)) ;
+ 47a:	85 e5       	ldi	r24, 0x55	; 85
+ 47c:	90 e0       	ldi	r25, 0x00	; 0
+ 47e:	fc 01       	movw	r30, r24
+ 480:	20 81       	ld	r18, Z
+ 482:	85 e5       	ldi	r24, 0x55	; 85
+ 484:	90 e0       	ldi	r25, 0x00	; 0
+ 486:	2e 7f       	andi	r18, 0xFE	; 254
+ 488:	fc 01       	movw	r30, r24
+ 48a:	20 83       	st	Z, r18
+					EXTI_u8_MCUCR |= (1<<EXTI_u8_MCUCR_ISC01_BIT) ;
+ 48c:	85 e5       	ldi	r24, 0x55	; 85
+ 48e:	90 e0       	ldi	r25, 0x00	; 0
+ 490:	fc 01       	movw	r30, r24
+ 492:	20 81       	ld	r18, Z
+ 494:	85 e5       	ldi	r24, 0x55	; 85
+ 496:	90 e0       	ldi	r25, 0x00	; 0
+ 498:	22 60       	ori	r18, 0x02	; 2
+ 49a:	fc 01       	movw	r30, r24
+ 49c:	20 83       	st	Z, r18
+				}
+
+				/* INT1 */
+				if (copy_InterruptNB == EXTI_u8_INT1)
+ 49e:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4a0:	81 30       	cpi	r24, 0x01	; 1
+ 4a2:	91 f4       	brne	.+36     	; 0x4c8 <__FUSE_REGION_LENGTH__+0xc8>
+				{
+					/* Trigger INT1 with any logical change          */
+					EXTI_u8_MCUCR &= (~(1<<EXTI_u8_MCUCR_ISC10_BIT)) ;
+ 4a4:	85 e5       	ldi	r24, 0x55	; 85
+ 4a6:	90 e0       	ldi	r25, 0x00	; 0
+ 4a8:	fc 01       	movw	r30, r24
+ 4aa:	20 81       	ld	r18, Z
+ 4ac:	85 e5       	ldi	r24, 0x55	; 85
+ 4ae:	90 e0       	ldi	r25, 0x00	; 0
+ 4b0:	2b 7f       	andi	r18, 0xFB	; 251
+ 4b2:	fc 01       	movw	r30, r24
+ 4b4:	20 83       	st	Z, r18
+					EXTI_u8_MCUCR |= (1<<EXTI_u8_MCUCR_ISC11_BIT) ;
+ 4b6:	85 e5       	ldi	r24, 0x55	; 85
+ 4b8:	90 e0       	ldi	r25, 0x00	; 0
+ 4ba:	fc 01       	movw	r30, r24
+ 4bc:	20 81       	ld	r18, Z
+ 4be:	85 e5       	ldi	r24, 0x55	; 85
+ 4c0:	90 e0       	ldi	r25, 0x00	; 0
+ 4c2:	28 60       	ori	r18, 0x08	; 8
+ 4c4:	fc 01       	movw	r30, r24
+ 4c6:	20 83       	st	Z, r18
+				}
+
+				/* INT2 */
+				if (copy_InterruptNB == EXTI_u8_INT2)
+ 4c8:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4ca:	82 30       	cpi	r24, 0x02	; 2
+ 4cc:	a9 f5       	brne	.+106    	; 0x538 <__FUSE_REGION_LENGTH__+0x138>
+				{
+					/* Trigger INT2 with Falling edge               */
+					EXTI_u8_MCUCSR &= (~(1<<EXTI_u8_MCUCSR_ISC2_BIT)) ;
+ 4ce:	84 e5       	ldi	r24, 0x54	; 84
+ 4d0:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	fc 01       	movw	r30, r24
+ 4d4:	20 81       	ld	r18, Z
+ 4d6:	84 e5       	ldi	r24, 0x54	; 84
+ 4d8:	90 e0       	ldi	r25, 0x00	; 0
+ 4da:	2f 7b       	andi	r18, 0xBF	; 191
+ 4dc:	fc 01       	movw	r30, r24
+ 4de:	20 83       	st	Z, r18
+				}
+				break;
+ 4e0:	2b c0       	rjmp	.+86     	; 0x538 <__FUSE_REGION_LENGTH__+0x138>
+
+			case EXTI_u8_RISING_EDGE_TRIGGER:
+				/* INT0 */
+				if (copy_InterruptNB == EXTI_u8_INT0)
+ 4e2:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4e4:	88 23       	and	r24, r24
+ 4e6:	51 f4       	brne	.+20     	; 0x4fc <__FUSE_REGION_LENGTH__+0xfc>
+				{
+					/* Trigger INT0 with the rising edge           */
+					EXTI_u8_MCUCR |= (1<<EXTI_u8_MCUCR_ISC00_BIT) | (1<<EXTI_u8_MCUCR_ISC01_BIT);
+ 4e8:	85 e5       	ldi	r24, 0x55	; 85
+ 4ea:	90 e0       	ldi	r25, 0x00	; 0
+ 4ec:	fc 01       	movw	r30, r24
+ 4ee:	20 81       	ld	r18, Z
+ 4f0:	85 e5       	ldi	r24, 0x55	; 85
+ 4f2:	90 e0       	ldi	r25, 0x00	; 0
+ 4f4:	23 60       	ori	r18, 0x03	; 3
+ 4f6:	fc 01       	movw	r30, r24
+ 4f8:	20 83       	st	Z, r18
+				else if (copy_InterruptNB == EXTI_u8_INT2)
+				{
+					/* Trigger INT2 with Rising edge               */
+					EXTI_u8_MCUCSR |= (1<<EXTI_u8_MCUCSR_ISC2_BIT) ;
+				}
+				break;
+ 4fa:	20 c0       	rjmp	.+64     	; 0x53c <__FUSE_REGION_LENGTH__+0x13c>
+				else if (copy_InterruptNB == EXTI_u8_INT1)
+ 4fc:	8a 81       	ldd	r24, Y+2	; 0x02
+ 4fe:	81 30       	cpi	r24, 0x01	; 1
+ 500:	51 f4       	brne	.+20     	; 0x516 <__FUSE_REGION_LENGTH__+0x116>
+					EXTI_u8_MCUCR |= (1<<EXTI_u8_MCUCR_ISC10_BIT) | (1<<EXTI_u8_MCUCR_ISC11_BIT);
+ 502:	85 e5       	ldi	r24, 0x55	; 85
+ 504:	90 e0       	ldi	r25, 0x00	; 0
+ 506:	fc 01       	movw	r30, r24
+ 508:	20 81       	ld	r18, Z
+ 50a:	85 e5       	ldi	r24, 0x55	; 85
+ 50c:	90 e0       	ldi	r25, 0x00	; 0
+ 50e:	2c 60       	ori	r18, 0x0C	; 12
+ 510:	fc 01       	movw	r30, r24
+ 512:	20 83       	st	Z, r18
+				break;
+ 514:	13 c0       	rjmp	.+38     	; 0x53c <__FUSE_REGION_LENGTH__+0x13c>
+				else if (copy_InterruptNB == EXTI_u8_INT2)
+ 516:	8a 81       	ldd	r24, Y+2	; 0x02
+ 518:	82 30       	cpi	r24, 0x02	; 2
+ 51a:	81 f4       	brne	.+32     	; 0x53c <__FUSE_REGION_LENGTH__+0x13c>
+					EXTI_u8_MCUCSR |= (1<<EXTI_u8_MCUCSR_ISC2_BIT) ;
+ 51c:	84 e5       	ldi	r24, 0x54	; 84
+ 51e:	90 e0       	ldi	r25, 0x00	; 0
+ 520:	fc 01       	movw	r30, r24
+ 522:	20 81       	ld	r18, Z
+ 524:	84 e5       	ldi	r24, 0x54	; 84
+ 526:	90 e0       	ldi	r25, 0x00	; 0
+ 528:	20 64       	ori	r18, 0x40	; 64
+ 52a:	fc 01       	movw	r30, r24
+ 52c:	20 83       	st	Z, r18
+				break;
+ 52e:	06 c0       	rjmp	.+12     	; 0x53c <__FUSE_REGION_LENGTH__+0x13c>
+				break;
+ 530:	00 00       	nop
+ 532:	05 c0       	rjmp	.+10     	; 0x53e <__FUSE_REGION_LENGTH__+0x13e>
+				break;
+ 534:	00 00       	nop
+ 536:	03 c0       	rjmp	.+6      	; 0x53e <__FUSE_REGION_LENGTH__+0x13e>
+				break;
+ 538:	00 00       	nop
+ 53a:	01 c0       	rjmp	.+2      	; 0x53e <__FUSE_REGION_LENGTH__+0x13e>
+				break;
+ 53c:	00 00       	nop
+		}
+		local_ErrorState = STD_ERROR_OK;
+ 53e:	81 e0       	ldi	r24, 0x01	; 1
+ 540:	89 83       	std	Y+1, r24	; 0x01
+	}
+
+	return local_ErrorState;
+ 542:	89 81       	ldd	r24, Y+1	; 0x01
+}
+ 544:	0f 90       	pop	r0
+ 546:	0f 90       	pop	r0
+ 548:	0f 90       	pop	r0
+ 54a:	df 91       	pop	r29
+ 54c:	cf 91       	pop	r28
+ 54e:	08 95       	ret
+
+00000550 <Lib_vDelayMs>:
+/*  input 		-> Time value of delay -> copy_u16time              */
+/*  output		-> N/A											    */
+/********************************************************************/
+
+void Lib_vDelayMs(u16 copy_u16time)
+{
+ 550:	cf 93       	push	r28
+ 552:	df 93       	push	r29
+ 554:	cd b7       	in	r28, 0x3d	; 61
+ 556:	de b7       	in	r29, 0x3e	; 62
+ 558:	2a 97       	sbiw	r28, 0x0a	; 10
+ 55a:	0f b6       	in	r0, 0x3f	; 63
+ 55c:	f8 94       	cli
+ 55e:	de bf       	out	0x3e, r29	; 62
+ 560:	0f be       	out	0x3f, r0	; 63
+ 562:	cd bf       	out	0x3d, r28	; 61
+ 564:	9a 87       	std	Y+10, r25	; 0x0a
+ 566:	89 87       	std	Y+9, r24	; 0x09
+	u32 Local_CountNumber;
+	/*--------------------------------------------------------------*/
+
+	/*----------------------main implementation---------------------*/
+
+	for (Local_CountNumber=NULL; Local_CountNumber < copy_u16time ; Local_CountNumber++)
+ 568:	1d 82       	std	Y+5, r1	; 0x05
+ 56a:	1e 82       	std	Y+6, r1	; 0x06
+ 56c:	1f 82       	std	Y+7, r1	; 0x07
+ 56e:	18 86       	std	Y+8, r1	; 0x08
+ 570:	28 c0       	rjmp	.+80     	; 0x5c2 <Lib_vDelayMs+0x72>
+		/*----------------------------------------------------------*/
+		/* outer loop which runs multiple of 1ms					*/
+		/* -> lower limit: 0										*/
+		/* -> upper limit: copy_u16time 						    */
+		/*----------------------------------------------------------*/
+		for(Local_InsideLoopCounter = NULL; Local_InsideLoopCounter < LIB_U8_UPPER_THRESHOLD ; Local_InsideLoopCounter++)
+ 572:	19 82       	std	Y+1, r1	; 0x01
+ 574:	1a 82       	std	Y+2, r1	; 0x02
+ 576:	1b 82       	std	Y+3, r1	; 0x03
+ 578:	1c 82       	std	Y+4, r1	; 0x04
+ 57a:	0f c0       	rjmp	.+30     	; 0x59a <Lib_vDelayMs+0x4a>
+	...
+ 584:	89 81       	ldd	r24, Y+1	; 0x01
+ 586:	9a 81       	ldd	r25, Y+2	; 0x02
+ 588:	ab 81       	ldd	r26, Y+3	; 0x03
+ 58a:	bc 81       	ldd	r27, Y+4	; 0x04
+ 58c:	01 96       	adiw	r24, 0x01	; 1
+ 58e:	a1 1d       	adc	r26, r1
+ 590:	b1 1d       	adc	r27, r1
+ 592:	89 83       	std	Y+1, r24	; 0x01
+ 594:	9a 83       	std	Y+2, r25	; 0x02
+ 596:	ab 83       	std	Y+3, r26	; 0x03
+ 598:	bc 83       	std	Y+4, r27	; 0x04
+ 59a:	89 81       	ldd	r24, Y+1	; 0x01
+ 59c:	9a 81       	ldd	r25, Y+2	; 0x02
+ 59e:	ab 81       	ldd	r26, Y+3	; 0x03
+ 5a0:	bc 81       	ldd	r27, Y+4	; 0x04
+ 5a2:	80 3d       	cpi	r24, 0xD0	; 208
+ 5a4:	91 05       	cpc	r25, r1
+ 5a6:	a1 05       	cpc	r26, r1
+ 5a8:	b1 05       	cpc	r27, r1
+ 5aa:	40 f3       	brcs	.-48     	; 0x57c <Lib_vDelayMs+0x2c>
+	for (Local_CountNumber=NULL; Local_CountNumber < copy_u16time ; Local_CountNumber++)
+ 5ac:	8d 81       	ldd	r24, Y+5	; 0x05
+ 5ae:	9e 81       	ldd	r25, Y+6	; 0x06
+ 5b0:	af 81       	ldd	r26, Y+7	; 0x07
+ 5b2:	b8 85       	ldd	r27, Y+8	; 0x08
+ 5b4:	01 96       	adiw	r24, 0x01	; 1
+ 5b6:	a1 1d       	adc	r26, r1
+ 5b8:	b1 1d       	adc	r27, r1
+ 5ba:	8d 83       	std	Y+5, r24	; 0x05
+ 5bc:	9e 83       	std	Y+6, r25	; 0x06
+ 5be:	af 83       	std	Y+7, r26	; 0x07
+ 5c0:	b8 87       	std	Y+8, r27	; 0x08
+ 5c2:	89 85       	ldd	r24, Y+9	; 0x09
+ 5c4:	9a 85       	ldd	r25, Y+10	; 0x0a
+ 5c6:	cc 01       	movw	r24, r24
+ 5c8:	a0 e0       	ldi	r26, 0x00	; 0
+ 5ca:	b0 e0       	ldi	r27, 0x00	; 0
+ 5cc:	2d 81       	ldd	r18, Y+5	; 0x05
+ 5ce:	3e 81       	ldd	r19, Y+6	; 0x06
+ 5d0:	4f 81       	ldd	r20, Y+7	; 0x07
+ 5d2:	58 85       	ldd	r21, Y+8	; 0x08
+ 5d4:	28 17       	cp	r18, r24
+ 5d6:	39 07       	cpc	r19, r25
+ 5d8:	4a 07       	cpc	r20, r26
+ 5da:	5b 07       	cpc	r21, r27
+ 5dc:	50 f2       	brcs	.-108    	; 0x572 <Lib_vDelayMs+0x22>
+			asm("nop");
+			asm("nop");
+		}
+	}
+
+}
+ 5de:	00 00       	nop
+ 5e0:	2a 96       	adiw	r28, 0x0a	; 10
+ 5e2:	0f b6       	in	r0, 0x3f	; 63
+ 5e4:	f8 94       	cli
+ 5e6:	de bf       	out	0x3e, r29	; 62
+ 5e8:	0f be       	out	0x3f, r0	; 63
+ 5ea:	cd bf       	out	0x3d, r28	; 61
+ 5ec:	df 91       	pop	r29
+ 5ee:	cf 91       	pop	r28
+ 5f0:	08 95       	ret
+
+000005f2 <Lib_vDelayUs>:
+/*				 the given input value of time in microseconds  */
+/*  input 		-> Time value of delay                          */
+/*  output		-> N/A											*/
+/****************************************************************/
+void Lib_vDelayUs(u16 copy_u16time)
+{
+ 5f2:	cf 93       	push	r28
+ 5f4:	df 93       	push	r29
+ 5f6:	00 d0       	rcall	.+0      	; 0x5f8 <Lib_vDelayUs+0x6>
+ 5f8:	00 d0       	rcall	.+0      	; 0x5fa <Lib_vDelayUs+0x8>
+ 5fa:	cd b7       	in	r28, 0x3d	; 61
+ 5fc:	de b7       	in	r29, 0x3e	; 62
+ 5fe:	9c 83       	std	Y+4, r25	; 0x04
+ 600:	8b 83       	std	Y+3, r24	; 0x03
+	/* this formula is used to calculate T1, T2, T3, then       */
+	/* then calculate the number of iterations needed to 		*/
+	/* generate the required delay in microseconds              */
+	/*----------------------------------------------------------*/
+
+	u16 local_CountNumber = (copy_u16time - LIB_U8_TOTAL_CALCULATED) / LIB_U8_AVG_TIME_PER_ITERATION;
+ 602:	8b 81       	ldd	r24, Y+3	; 0x03
+ 604:	9c 81       	ldd	r25, Y+4	; 0x04
+ 606:	45 97       	sbiw	r24, 0x15	; 21
+ 608:	9c 01       	movw	r18, r24
+ 60a:	a9 e8       	ldi	r26, 0x89	; 137
+ 60c:	b8 e8       	ldi	r27, 0x88	; 136
+ 60e:	0e 94 29 03 	call	0x652	; 0x652 <__umulhisi3>
+ 612:	96 95       	lsr	r25
+ 614:	87 95       	ror	r24
+ 616:	96 95       	lsr	r25
+ 618:	87 95       	ror	r24
+ 61a:	96 95       	lsr	r25
+ 61c:	87 95       	ror	r24
+ 61e:	9a 83       	std	Y+2, r25	; 0x02
+ 620:	89 83       	std	Y+1, r24	; 0x01
+
+	for(;local_CountNumber > NULL; local_CountNumber--)
+ 622:	06 c0       	rjmp	.+12     	; 0x630 <Lib_vDelayUs+0x3e>
+	{
+			asm("nop");
+ 624:	00 00       	nop
+	for(;local_CountNumber > NULL; local_CountNumber--)
+ 626:	89 81       	ldd	r24, Y+1	; 0x01
+ 628:	9a 81       	ldd	r25, Y+2	; 0x02
+ 62a:	01 97       	sbiw	r24, 0x01	; 1
+ 62c:	9a 83       	std	Y+2, r25	; 0x02
+ 62e:	89 83       	std	Y+1, r24	; 0x01
+ 630:	89 81       	ldd	r24, Y+1	; 0x01
+ 632:	9a 81       	ldd	r25, Y+2	; 0x02
+ 634:	89 2b       	or	r24, r25
+ 636:	b1 f7       	brne	.-20     	; 0x624 <Lib_vDelayUs+0x32>
+	}
+}
+ 638:	00 00       	nop
+ 63a:	0f 90       	pop	r0
+ 63c:	0f 90       	pop	r0
+ 63e:	0f 90       	pop	r0
+ 640:	0f 90       	pop	r0
+ 642:	df 91       	pop	r29
+ 644:	cf 91       	pop	r28
+ 646:	08 95       	ret
+
+00000648 <main>:
+/*  This is the application file													*/
+/************************************************************************************/
+#include "STD_Types.h"
+
+void main (void)
+{
+ 648:	cf 93       	push	r28
+ 64a:	df 93       	push	r29
+ 64c:	cd b7       	in	r28, 0x3d	; 61
+ 64e:	de b7       	in	r29, 0x3e	; 62
+
+
+		while (1)
+ 650:	ff cf       	rjmp	.-2      	; 0x650 <main+0x8>
+
+00000652 <__umulhisi3>:
+ 652:	a2 9f       	mul	r26, r18
+ 654:	b0 01       	movw	r22, r0
+ 656:	b3 9f       	mul	r27, r19
+ 658:	c0 01       	movw	r24, r0
+ 65a:	a3 9f       	mul	r26, r19
+ 65c:	70 0d       	add	r23, r0
+ 65e:	81 1d       	adc	r24, r1
+ 660:	11 24       	eor	r1, r1
+ 662:	91 1d       	adc	r25, r1
+ 664:	b2 9f       	mul	r27, r18
+ 666:	70 0d       	add	r23, r0
+ 668:	81 1d       	adc	r24, r1
+ 66a:	11 24       	eor	r1, r1
+ 66c:	91 1d       	adc	r25, r1
+ 66e:	08 95       	ret
+
+00000670 <_exit>:
+ 670:	f8 94       	cli
+
+00000672 <__stop_program>:
+ 672:	ff cf       	rjmp	.-2      	; 0x672 <__stop_program>
